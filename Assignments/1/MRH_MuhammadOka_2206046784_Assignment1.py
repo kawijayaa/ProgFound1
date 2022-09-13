@@ -47,7 +47,7 @@ turtle.up()
 turtle.goto(-(square_size*rows)/2,-50) # This is needed for making the chessboard center to the screen
 turtle.down()
 # Loop rows
-for i in range(1, int(rows)+1):
+for _ in range(1, int(rows)+1):
     # Loop columns
     for _ in range(int(rows)):
         turtle.down()
