@@ -26,7 +26,13 @@ petals = numinput("Colorful Chessboard and Flower", "Enter number of petals: ", 
 
 # Define square and petal function so we dont have any repetitive code
 def square():
-    turtle.fillcolor(randint(0,255), randint(0,255), randint(0,255)) # Random colors
+    # Random colors
+    r = randint(0,255)
+    g = randint(0,255)
+    b = randint(0,255)
+    turtle.pencolor(r,g,b)
+    turtle.fillcolor(r, g, b)
+
     turtle.begin_fill()
     for _ in range(4): # Create a square
         turtle.fd(square_size)
@@ -34,7 +40,13 @@ def square():
     turtle.end_fill()
 
 def petal():
-    turtle.fillcolor(randint(0,255), randint(0,255), randint(0,255)) # Random colors
+    # Random colors
+    r = randint(0,255)
+    g = randint(0,255)
+    b = randint(0,255)
+    turtle.pencolor(r,g,b)
+    turtle.fillcolor(r, g, b)
+
     turtle.begin_fill()
     turtle.circle(50,90)
     turtle.right(-90)
@@ -74,7 +86,8 @@ for x in range(1, int(petals)+1):
 turtle.up()
 turtle.goto(0, -250)
 turtle.down()
-turtle.write(f"Colorful Chessboard of {int(rows**2)} squares and Flower {int(petals)} petals.", align="center", font=("Arial", 24, "normal"))
+turtle.pencolor(0,0,0)
+turtle.write(f"Colorful Chessboard of {int(rows**2)} squares and Flower {int(petals)} petals.", align="center", font=("Arial", 18, "normal"))
 
 # Exit on click
 exitonclick()
