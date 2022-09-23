@@ -81,9 +81,9 @@ for x in range(1, int(petals)+1):
 
     # Create one petal
     turtle.begin_fill()
-    turtle.circle(20,90)
+    turtle.circle(50,90)
     turtle.right(-90)
-    turtle.circle(20,90)
+    turtle.circle(50,90)
     turtle.end_fill()
 
     # Rotate evenly to create next petal

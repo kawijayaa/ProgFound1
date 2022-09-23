@@ -13,4 +13,3 @@ while True:
         print(" "*x + "*")
         print(" "*(int(inp)-x) + "*")
         sleep(0.2/int(inp))
-    #inp = randint(int(inp)-3, int(inp)+4)
