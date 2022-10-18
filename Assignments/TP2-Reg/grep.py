@@ -55,18 +55,25 @@ def scan_words(arg, string, file):
         current_file_words.append(current_file_lines[i].split(" "))
     for i in range(len(current_file_lines)):
         for j in range(len(current_file_words[i])):
-            if re.match(string, current_file_words[i][j]):
+            if re.search(string, current_file_words[i][j]):
                 line_number_str = (f"Line {i+1}")
                 print(f"{file:<40s} {line_number_str:<10s} {current_file_lines[i]:<.40s}")
 
-if sys.argv[1] == "-w" or sys.argv[1] == "-i":
-    argument = sys.argv[1]
-    string_match = sys.argv[2]
-    directory = sys.argv[3]
-else:
+if len(sys.argv) == 4:
+    if sys.argv[1] == "-w" or sys.argv[1] == "-i":
+        argument = sys.argv[1]
+        string_match = sys.argv[2]
+        directory = sys.argv[3]
+    else:
+        print("Argument not valid.")
+        quit()
+elif len(sys.argv) == 3:
     argument = ""
     string_match = sys.argv[1]
     directory = sys.argv[2]
+else:
+    print("Argument not valid.")
+    quit()
 
 file_list = scan_directory(directory)
 
